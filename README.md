@@ -9,6 +9,7 @@
 - **OpenForensicRules** 是一套标准化的数字取证与应急响应信息采集规则格式规范。
 - **NOPTrace-Configurator** 是 **OpenForensicRules** 的图形化配置工具，同时可以检查用户配置是否规范
 - **NOPTrace-Collector**  是基于 **OpenForensicRules**  的采集器，用户可以使用它进行定制化信息采集
+- **NOPTrace-Configs**  是符合 **OpenForensicRules** 规范的电子取证与应急响应配置集合
 
 
 
@@ -22,9 +23,9 @@
 
 ## 配置文件说明
 
-在发布 **NOPTrace-Collector**  时，我们曾发出提醒，大家一定要了解程序要加载的配置文件，因为采集器是可以执行系统命令的，所以下面展示并简述每一个配置文件的内容，其中 `SensitiveDirs.yaml` 、 `Log.yaml`、`Integrity.yaml` 要着重考虑是否加载
+在发布 **NOPTrace-Collector**  时，我们曾发出提醒，大家一定要了解程序要加载的配置文件，因为采集器是可以执行系统命令的，所以下面展示并简述每一个配置文件的内容，其中部分配置文件要着重考虑是否加载
 
- **NOPTrace-Configs** 项目 Linux 版已覆盖绝对多数 《Linux 应急响应手册》 中的常规安全检查部分内容
+ **NOPTrace-Configs** 项目 Linux 版已覆盖绝大多数 《Linux 应急响应手册》 中的常规安全检查部分内容； Windows 版已覆盖绝大多数 《Windows 应急响应手册》 中的常规安全检查部分内容
 
 ![](http://mweb-tc.oss-cn-beijing.aliyuncs.com/2025-07-08-101718.jpg)
 
@@ -32,7 +33,15 @@
 
 
 
-## Account.yaml
+![](http://mweb-tc.oss-cn-beijing.aliyuncs.com/2025-07-09-061255.jpg)
+
+![](http://mweb-tc.oss-cn-beijing.aliyuncs.com/2025-07-09-061339.png)
+
+<br />
+
+## Linux 版本配置文件说明
+
+### Account.yaml
 
 ```yaml
 name: 'LinuxAccounts'
@@ -51,7 +60,7 @@ author: 'NOPTeam'
 
 
 
-## Alias.yaml
+### Alias.yaml
 
 ```yaml
 name: LinuxAlias
@@ -74,7 +83,7 @@ urls:
 
 
 
-## ASLR.yaml
+### ASLR.yaml
 
 ```yaml
 name: 'LinuxASLR'
@@ -94,7 +103,7 @@ author: 'NOPTeam'
 
 
 
-## Bash.yaml
+### Bash.yaml
 
 ```yaml
 name: 'LinuxBashBuiltIn'
@@ -116,7 +125,7 @@ author: 'NOPTeam'
 
 
 
-## Capabilities.yaml
+### Capabilities.yaml
 
 ```yaml
 name: 'LinuxCapabilities'
@@ -138,7 +147,7 @@ author: 'NOPTeam'
 
 
 
-## CrontabFile.yaml
+### CrontabFile.yaml
 
 ```yaml
 name: 'LinuxCrontab'
@@ -218,7 +227,7 @@ author: 'NOPTeam'
 
 
 
-## Dns.yaml
+### Dns.yaml
 
 ```yaml
 name: 'LinuxDnsConfig'
@@ -237,7 +246,7 @@ author: 'NOPTeam'
 
 
 
-## GPG.yaml
+### GPG.yaml
 
 ```yaml
 name: 'LinuxGPG'
@@ -257,7 +266,7 @@ author: 'NOPTeam'
 
 
 
-## HistoryFile.yaml
+### HistoryFile.yaml
 
 ```yaml
 name: 'LinuxHistoryFile'
@@ -294,7 +303,7 @@ author: 'NOPTeam'
 
 
 
-## HomeTemplate.yaml
+### HomeTemplate.yaml
 
 ```yaml
 name: 'LinuxHomeTemplate'
@@ -313,7 +322,7 @@ author: 'NOPTeam'
 
 
 
-## Integrity.yaml
+### Integrity.yaml
 
 ```yaml
 name: 'LinuxIntegrity'
@@ -342,7 +351,7 @@ Linux 平台上软件程序以及配置文件的完整性检查。
 
 
 
-## Iptables.yaml
+### Iptables.yaml
 
 ```yaml
 name: 'LinuxIptables'
@@ -362,7 +371,7 @@ author: 'NOPTeam'
 
 
 
-## KernalModule.yaml
+### KernalModule.yaml
 
 ```yaml
 name: LinuxKernalMod
@@ -407,7 +416,7 @@ sources:
 
 
 
-## Log.yaml
+### Log.yaml
 
 ```yaml
 name: 'LinuxLog'
@@ -428,7 +437,7 @@ author: 'NOPTeam'
 
 
 
-## Login.yaml
+### Login.yaml
 
 ```yaml
 name: LinuxLogin
@@ -476,7 +485,7 @@ urls:
 
 
 
-## Motd.yaml
+### Motd.yaml
 
 ```yaml
 name: 'LinuxMotd'
@@ -497,7 +506,7 @@ author: 'NOPTeam'
 
 
 
-## PAM.yaml
+### PAM.yaml
 
 ```yaml
 name: 'LinuxPAM'
@@ -529,7 +538,7 @@ author: 'NOPTeam'
 
 
 
-## Preload.yaml
+### Preload.yaml
 
 ```yaml
 name: 'LinuxPreload'
@@ -569,7 +578,7 @@ author: 'NOPTeam'
 
 
 
-## Proc.yaml
+### Proc.yaml
 
 ```yaml
 name: 'LinuxProc'
@@ -596,7 +605,7 @@ author: 'NOPTeam'
 
 
 
-## ProcessFileDeleted.yaml
+### ProcessFileDeleted.yaml
 
 ```yaml
 name: 'LinuxProcessFileDeleted'
@@ -621,7 +630,7 @@ author: 'NOPTeam'
 
 
 
-## PtraceScope.yaml
+### PtraceScope.yaml
 
 ```yaml
 name: 'LinuxPtraceScope'
@@ -640,7 +649,7 @@ author: 'NOPTeam'
 
 
 
-## Python.pth.yaml
+### Python.pth.yaml
 
 ```yaml
 name: 'LinuxPythonPthBackdoor'
@@ -671,7 +680,7 @@ author: 'NOPTeam'
 
 
 
-## SensitiveDirs.yaml
+### SensitiveDirs.yaml
 
 ```yaml
 name: 'SensitiveDirs'
@@ -693,7 +702,7 @@ author: 'NOPTeam'
 
 
 
-## Services.yaml
+### Services.yaml
 
 ```yaml
 name: 'LinuxServices'
@@ -715,7 +724,7 @@ author: 'NOPTeam'
 
 
 
-## SpecialPermissionFile.yaml
+### SpecialPermissionFile.yaml
 
 ```yaml
 name: 'LinuxSpecialPermission'
@@ -748,7 +757,7 @@ author: 'NOPTeam'
 
 
 
-## SSH.yaml
+### SSH.yaml
 
 ```yaml
 name: 'LinuxSSHAccess'
@@ -792,7 +801,7 @@ author: 'NOPTeam'
 
 
 
-## Startup.yaml
+### Startup.yaml
 
 ```yaml
 name: 'LinuxStartupService'
@@ -852,7 +861,7 @@ author: 'NOPTeam'
 
 
 
-## Sudo.yaml
+### Sudo.yaml
 
 ```yaml
 name: 'LinuxSudo'
@@ -877,7 +886,7 @@ author: 'NOPTeam'
 
 
 
-## TCPWrappers.yaml
+### TCPWrappers.yaml
 
 ```yaml
 name: 'LinuxTcpWrappers'
@@ -898,7 +907,7 @@ author: 'NOPTeam'
 
 
 
-## Trap.yaml
+### Trap.yaml
 
 ```yaml
 name: 'LinuxTrap'
@@ -918,7 +927,7 @@ author: 'NOPTeam'
 
 
 
-## Udev.yaml
+### Udev.yaml
 
 ```yaml
 name: 'LinuxUdev'
@@ -940,10 +949,1511 @@ author: 'NOPTeam'
 采集 Linux 平台上 `udev` 相关信息，主要用于排查 `udev` 后门。
 
 
+## Windows 版配置文件说明
+
+### Accessibility.yaml
+
+```yaml
+name: 'WindowsAccessibility'
+author: 'NOPTeam'
+sources:
+  - type: 'FILE'
+    supported_os: 'Windows'
+    attributes:
+      paths:
+        - '%%environ_systemroot%%\System32\sethc.exe'
+        - '%%environ_systemroot%%\System32\utilman.exe'
+        - '%%environ_systemroot%%\System32\osk.exe'
+        - '%%environ_systemroot%%\System32\Magnify.exe'
+        - '%%environ_systemroot%%\System32\Narrator.exe'
+        - '%%environ_systemroot%%\System32\DisplaySwitch.exe'
+        - '%%environ_systemroot%%\System32\AtBroker.exe'
+version: '0.0.1'
+doc: 'Windows 平台辅助程序信息收集。'
+```
+
+采集 Windows 平台的辅助程序，例如常见的粘滞键。
+
+
+
+### Accounts.yaml
+
+```yaml
+name: 'WindowsAccounts'
+doc: 'Windows 平台上用户以及用户组的相关信息收集。'
+author: 'NOPTeam'
+version: '0.0.1'
+sources:
+  - type: 'COMMAND'
+    supported_os: 'Windows'
+    attributes:
+      cmd: 'net'
+      args:
+        - 'user'
+  - type: 'COMMAND'
+    supported_os: 'Windows'
+    attributes:
+      cmd: 'net'
+      args:
+        - 'localgroup'
+  - type: 'COMMAND'
+    supported_os: 'Windows'
+    attributes:
+      cmd: 'net'
+      args:
+        - 'localgroup'
+        - 'Users'
+  - type: 'COMMAND'
+    supported_os: 'Windows'
+    attributes:
+      cmd: 'net'
+      args:
+        - 'localgroup'
+        - 'Administrators'
+  - type: 'WMI'
+    supported_os: 'Windows'
+    attributes:
+      base_object: ''
+      query: 'SELECT * FROM Win32_UserAccount'
+  - type: 'WMI'
+    supported_os: 'Windows'
+    attributes:
+      base_object: ''
+      query: 'SELECT * FROM Win32_Group'
+
+```
+
+采集 Windows 平台上账户相关信息。
+
+
+
+### Activity.yaml
+
+```yaml
+name: WindowsGroupPolicy
+doc: |-
+  Windows 平台上组策略中关于进程创建是否设置了记录。
+
+  计算机配置 -> Windows设置 -> 安全设置 -> ⾼级审核策略配置 -> 详细跟踪 -> 审核进程创建
+author: NOPTeam
+version: 0.0.1
+sources:
+  - type: COMMAND
+    supported_os: Windows
+    attributes:
+      cmd: auditpol
+      args:
+        - /get
+        - /subcategory:"Process Creation"
+  - type: COMMAND
+    supported_os: Windows
+    attributes:
+      cmd: auditpol
+      args:
+        - /get
+        - /subcategory:"进程创建"
+
+---
+
+name: WindowsAmcache
+doc: |-
+  Windows 平台上 Amcache 是一个用于记录系统上执行过的程序及其信息的数据库。
+  它主要用于取证调查和安全分析，因为它会在后台自动收集和保存可执行文件的元数据，包括程序路径、首次运行时间、文件哈希值等信息。
+author: NOPTeam
+version: 0.0.1
+sources:
+  - type: COMMAND
+    supported_os: Windows
+    attributes:
+      cmd: .\tools\AmcacheParser.exe
+      args:
+        - '-f'
+        - C:\Windows\appcompat\Programs\Amcache.hve
+        - '--csv'
+        - '%temp%'
+  - type: FILE
+    supported_os: Windows
+    attributes:
+      paths:
+        - '%%current_user_temp%%/*_Amcache_*.csv'
+urls:
+  - https://github.com/EricZimmerman/AmcacheParser
+
+---
+
+name: WindowsShimCache
+doc: >-
+  Windows 平台上的ShimCache（全名 Application Compatibility Cache，应用兼容性缓存）是 Windows
+  操作系统用于程序兼容性支持的一个内部机制。它最常被数字取证、安全分析和溯源调查用来判断某个可执行文件曾经是否在系统上运行过，即使这个文件和日志都已经被删除，ShimCache
+  也可能有残留记录。
+author: NOPTeam
+version: 0.0.1
+sources:
+  - type: REGISTRY_KEY
+    supported_os: Windows
+    attributes:
+      keys:
+        - >-
+          HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Session
+          Manager\AppCompatCache
+
+---
+
+name: WindowsUserAssist
+doc: >-
+  Windows 平台上 UserAssist 是 Windows
+  注册表中的一个特殊分支，用于记录用户通过图形界面（如开始菜单、桌面、资源管理器等）运行过的程序的信息。它最初的目的是帮助 Windows
+  统计和优化“常用程序”列表，但在数字取证和行为审计中非常有价值，因为它能反映出用户实际交互打开过哪些程序及其次数和最后时间。
+author: NOPTeam
+version: 0.0.1
+sources:
+  - type: REGISTRY_KEY
+    supported_os: Windows
+    attributes:
+      keys:
+        - >-
+          HKEY_USERS\%%users_sid%%\Software\Microsoft\Windows\CurrentVersion\Explorer\UserAssist\*
+
+---
+
+name: WindowsMUICache
+doc: >-
+  Windows 平台上 MUICache 是 Windows
+  操作系统中的⼀个功能，⽤于记录和缓存多语⾔⽤户界⾯（MUI）⽂件的信息。它主要⽤于加快多语⾔应⽤程序的启动速度，并提供对多语⾔资源的访问⽀持。
+author: NOPTeam
+version: 0.0.1
+sources:
+  - type: REGISTRY_KEY
+    supported_os: Windows
+    attributes:
+      keys:
+        - >-
+          HKEY_USERS\%%users_sid%%\Software\Microsoft\Windows\ShellNoRoam\MUICache
+        - >-
+          HKEY_USERS\%%users_sid%%\Software\Microsoft\Windows\CurrentVersion\Explorer\MUICache
+        - >-
+          HKEY_USERS\%%users_sid%%\Software\Classes\Local
+          Settings\Software\Microsoft\Windows\Shell\MuiCache
+
+---
+
+name: WindowsRunMRU
+doc: |-
+  Windows 平台上 RunMRU 是注册表中的一个条目，用于记录“运行”对话框（Win+R 或开始菜单 > 运行）历史输入的命令。
+  它能反映出用户近期通过“运行”窗口手动输入过哪些路径、命令、网址等，对于用户操作溯源和数字取证非常有用。
+author: NOPTeam
+version: 0.0.1
+sources:
+  - type: REGISTRY_KEY
+    supported_os: Windows
+    attributes:
+      keys:
+        - >-
+          HKEY_USERS\%%users_sid%%\Software\Microsoft\Windows\CurrentVersion\Explorer\RunMRU
+
+---
+
+name: WindowsAppCompatFlags
+doc: >-
+  AppCompatFlags 注册表键（AppCompatFlags Registry Keys）是 Windows
+  操作系统应用程序兼容性机制（Application Compatibility, Shim
+  Engine）的一部分。它用于记录和配置针对特定可执行文件的兼容性设置、强制沙箱、强制以管理员权限运行等信息。这些信息既可能是系统自动生成，也可以是用户手动配置（比如在程序右键属性里“兼容性”选项卡里的设置）。
+author: NOPTeam
+version: 0.0.1
+sources:
+  - type: REGISTRY_KEY
+    supported_os: Windows
+    attributes:
+      keys:
+        - >-
+          HKEY_USERS\%%users_sid%%\Software\Microsoft\Windows
+          NT\CurrentVersion\AppCompatFlags\
+        - >-
+          HKEY_USERS\%%users_sid%%\Software\Microsoft\Windows
+          NT\CurrentVersion\AppCompatFlags\*\
+        - >-
+          HKEY_USERS\%%users_sid%%\Software\Microsoft\Windows
+          NT\CurrentVersion\AppCompatFlags\*\*\
+        - >-
+          HKEY_USERS\%%users_sid%%\Software\Microsoft\Windows
+          NT\CurrentVersion\AppCompatFlags\*\*\*\
+        - >-
+          HKEY_LOCAL_MACHINE\Software\Microsoft\Windows
+          NT\CurrentVersion\AppCompatFlags\
+        - >-
+          HKEY_LOCAL_MACHINE\Software\Microsoft\Windows
+          NT\CurrentVersion\AppCompatFlags\*\
+        - >-
+          HKEY_LOCAL_MACHINE\Software\Microsoft\Windows
+          NT\CurrentVersion\AppCompatFlags\*\*\
+        - >-
+          HKEY_LOCAL_MACHINE\Software\Microsoft\Windows
+          NT\CurrentVersion\AppCompatFlags\*\*\*\
+
+---
+
+name: WindowsPrefetch
+doc: |-
+  Prefetch 是 Windows 操作系统为加快程序启动速度而设计的程序预读机制，也是一类特殊的磁盘文件（不是注册表项！）和相关分析术语。
+  在数字取证领域，Prefetch 文件可以用来判断某个程序是否被运行过、运行过多少次、最后一次运行时间等信息。
+author: NOPTeam
+version: 0.0.1
+sources:
+  - type: REGISTRY_VALUE
+    supported_os: Windows
+    attributes:
+      key_value_pairs:
+        - key: >-
+            HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Session
+            Manager\Memory Management\PrefetchParameters
+          value: EnablePrefetcher
+  - type: PATH
+    supported_os: Windows
+    attributes:
+      paths:
+        - C:\Windows\Prefetch\
+
+---
+
+name: WindowsApplicationExperience
+doc: >-
+  Application-Experience（应用体验，常缩写为 AE 或 AppCompat）是 Windows
+  操作系统的一个系统服务和相关组件，主要用于应用兼容性和用户体验改进。
+
+  它包括一系列后台服务、注册表项和日志，用于：
+
+  - 检测和记录应用兼容性问题
+
+  - 支持“兼容性助手”弹窗和建议（如“此程序可能没有正确安装”之类提示）
+
+  - 辅助 Windows 安装、升级和程序运行的平滑化
+
+  - 记录部分程序的安装、卸载、运行等操作的相关信息
+
+  这些机制有助于微软收集兼容性数据，改进后续系统和补丁，同时也为数字取证分析提供了一些痕迹。
+author: NOPTeam
+version: 0.0.1
+sources:
+  - type: FILE
+    supported_os: Windows
+    attributes:
+      paths:
+        - >-
+          C:\Windows\System32\winevt\Logs\Microsoft-Windows-Application-Experience*.evtx
+
+---
+
+name: WindowsJumpLists
+doc: >-
+  Jump Lists（跳转列表）是 Windows 7
+  及以后引入的一项功能，用于记录和展示用户最近或常用打开的文件、文件夹、网址等操作历史，并通过任务栏和开始菜单为用户提供快速访问入口。它不仅提升了用户体验，也为取证分析提供了重要的用户操作轨迹。
+author: NOPTeam
+version: 0.0.1
+sources:
+  - type: PATH
+    supported_os: Windows
+    attributes:
+      paths:
+        - '%%users_appdata%%\Microsoft\Windows\Recent\AutomaticDestinations\'
+        - '%%users_appdata%%\Microsoft\Windows\Recent\CustomDestinations\'
+
+---
+
+name: WindowsSRUM
+doc: >-
+  SRUM（System Resource Usage Monitor，系统资源使用监控器）是自 Windows 8
+  起引入的一个系统组件，用于记录和监控系统资源的详细使用情况。SRUM 会持续采集并保存如下数据：
+
+  - 各个进程/应用的CPU、内存、网络、能耗等资源消耗
+
+  - 网络连接的应用、IP、流量统计
+
+  - 用户活动（如程序启动、前台/后台运行情况）
+
+  这些数据会被系统用于电池优化、能耗分析、网络流量统计等内部用途，但对于数字取证来说，SRUM 是一个极其宝贵的用户行为和系统活动历史分析源。
+author: NOPTeam
+version: 0.0.1
+sources:
+  - type: PATH
+    supported_os: Windows
+    attributes:
+      paths:
+        - C:\Windows\System32\sru\
+
+---
+
+name: WindowsLastVisitedMRU
+doc: >-
+  LastVisitedMRU 是 Windows
+  注册表中用于记录资源管理器（Explorer）或常见文件对话框中“最近访问过的文件夹/路径”历史的一个项目。
+
+  在数字取证中，LastVisitedMRU 可还原用户最近通过“打开/保存”对话框访问过哪些文件夹，属于用户操作轨迹的重要部分。
+author: NOPTeam
+version: 0.0.1
+sources:
+  - type: REGISTRY_KEY
+    supported_os: Windows
+    attributes:
+      keys:
+        - >-
+          HKEY_USERS\%%users_sid%%\Software\Microsoft\Windows\CurrentVersion\Explorer\ComDlg32\LastVisitedPidlMRU
+        - >-
+          HKEY_USERS\%%users_sid%%\Software\Microsoft\Windows\CurrentVersion\Explorer\ComDlg32\LastVisitedPidlMRULegacy
+        - >-
+          HKEY_USERS\%%users_sid%%\Software\Microsoft\Windows\CurrentVersion\Explorer\ComDlg32\OpenSavePidlMRU\*\
+urls:
+  - https://www.cybertriage.com/artifact/windows-opensave-mru-artifact/
+
+---
+
+name: WindowsRecentDocs
+doc: Windows 平台上用于记录该用户最近打开过的文件列表，也就是 Windows “最近文档”功能的核心数据源。
+author: NOPTeam
+version: 0.0.1
+sources:
+  - type: REGISTRY_KEY
+    supported_os: Windows
+    attributes:
+      keys:
+        - >-
+          HKEY_USERS\%%users_sid%%\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\RecentDocs
+
+```
+
+采集 Windows 平台上的近期活动，这里包括了多个 Artifact 
+**需要注意：** Amcache 文件无法直接采集，需要外部工具协助，上面使用的是 `AmcacheParser` 来辅助先在用户目录生成解析后的 csv 文件，之后在使用文件采集的方法进行采集。收集器支持 source 的串行执行。 所以需要大家自行下载 AmcacheParser 放入到 `.\tools` 目录或直接使用项目附带的 。
+
+> 官方下载地址
+> https://ericzimmerman.github.io/#!index.md
+> https://github.com/EricZimmerman/AmcacheParser?tab=readme-ov-file
+
+
+
+### AppCertDLLs.yaml
+
+```yaml
+name: 'WindowsAppCertDLLs'
+doc: "AppCert DLLs 是 Windows 的一个高级进程拦截与注入机制，广泛用于安全产品、调试器、取证工具。\n当程序使用 CreateProcess、CreateProcessAsUser、CreateProcessWithLoginW、CreateProcessWithTokenW 或 WinExec 等函数时，这些进程会获取HKEY_LOCAL_MACHINE\\System\\CurrentControlSet\\Control\\SessionManager\\AppCertDlls注册表项，此项下的dll都会加载到此进程。"
+author: 'NOPTeam'
+version: '0.0.1'
+sources:
+  - type: 'REGISTRY_KEY'
+    supported_os: 'Windows'
+    attributes:
+      keys:
+        - 'HKEY_LOCAL_MACHINE\System\CurrentControlSet\Control\Session Manager\AppCertDlls'
+```
+
+采集 Windows 平台上的 `AppCert DLLs` 信息，该内容常被用来进程拦截与注入
+
+
+
+### AppInitDLL.yaml
+
+```yaml
+name: 'WindowsAppInitDLL'
+author: 'NOPTeam'
+sources:
+  - type: 'REGISTRY_VALUE'
+    supported_os: 'Windows'
+    attributes:
+      key_value_pairs:
+        - key: 'HKEY_LOCAL_MACHINE\Software\Microsoft\Windows NT\CurrentVersion\Windows'
+          value: 'AppInit_DLLs'
+        - key: 'HKEY_LOCAL_MACHINE\Software\Wow6432Node\Microsoft\Windows NT\CurrentVersion\Windows'
+          value: 'AppInit_DLLs'
+version: '0.0.1'
+doc: 'AppInit DLLs 是 Windows 系统提供的一种全局 DLL 注入机制，用于让指定的 DLL 自动加载到所有使用 User32.dll 的进程（几乎所有带 GUI 的应用程序）中。'
+
+```
+
+采集 Windows 平台上的 `AppInit DLLs` 信息，其可以被用来全局 DLL 注入
+
+
+
+### ApplicationShimming.yaml
+
+```yaml
+name: 'WindowsApplicationShimming'
+author: 'NOPTeam'
+sources:
+  - type: 'PATH'
+    supported_os: 'Windows'
+    attributes:
+      paths:
+        - '%%environ_windir%%\AppPatch\'
+  - type: 'REGISTRY_KEY'
+    supported_os: 'Windows'
+    attributes:
+      keys:
+        - 'HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\AppCompatFlags\InstalledSDB'
+        - 'HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\AppCompatFlags\Custom'
+version: '0.0.1'
+doc: "Application Shimming（应用程序垫片/兼容性垫片）\n是 Windows 系统内置的一种兼容性子系统机制，允许为指定程序注入“垫片”代码，以“修正”或“修改”程序的运行行为。"
+
+```
+
+采集 Windows 平台上 `Application Shimming` 信息，这也是与程序注入相关的内容
+
+
+
+### AutoRun.yaml
+
+```yaml
+name: 'WindowsAutoRun'
+author: 'NOPTeam'
+sources:
+  - type: 'PATH'
+    supported_os: 'Windows'
+    attributes:
+      paths:
+        - '%%users_appdata%%\Microsoft\Windows\Start'
+        - '%%environ_programdata%%\Microsoft\Windows\Start Menu\Programs\Startup'
+  - type: 'PATH'
+    supported_os: 'Windows'
+    attributes:
+      paths:
+        - '%%environ_systemdrive%%\Users\Default\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup'
+  - type: 'REGISTRY_KEY'
+    supported_os: 'Windows'
+    attributes:
+      keys:
+        - 'HKEY_USERS\%%users_sid%%\SOFTWARE\Microsoft\Windows\CurrentVersion\Run'
+        - 'HKEY_USERS\%%users_sid%%\SOFTWARE\Microsoft\Windows\CurrentVersion\RunOnce'
+        - 'HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Run'
+        - 'HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\RunOnce'
+        - 'HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\RunOnceEx'
+        - 'HKEY_LOCAL_MACHINE\SOFTWARE\WOW6432Node\Microsoft\Windows\CurrentVersion\Run'
+        - 'HKEY_LOCAL_MACHINE\SOFTWARE\WOW6432Node\Microsoft\Windows\CurrentVersion\RunOnce'
+        - 'HKEY_LOCAL_MACHINE\SOFTWARE\WOW6432Node\Microsoft\Windows\CurrentVersion\RunOnceEx'
+  - type: 'REGISTRY_KEY'
+    supported_os: 'Windows'
+    attributes:
+      keys:
+        - 'HKEY_USERS\%%users_sid%%\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\Explorer\Run'
+        - 'HKEY_USERS\%%users_sid%%\Software\Microsoft\Windows NT\CurrentVersion\Windows\Load'
+        - 'HKEY_USERS\%%users_sid%%\Software\Microsoft\Windows NT\CurrentVersion\Windows\Run'
+        - 'HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\Explorer\Run'
+        - 'HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Windows\Load'
+        - 'HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Windows\Run'
+  - type: 'REGISTRY_VALUE'
+    supported_os: 'Windows'
+    attributes:
+      key_value_pairs:
+        - key: 'HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Winlogon'
+          value: 'Userinit'
+        - key: 'HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Winlogon'
+          value: 'Shell'
+        - key: 'HKEY_LOCAL_MACHINE\SOFTWARE\WOW6432Node\Microsoft\Windows NT\CurrentVersion\Winlogon'
+          value: 'Userinit'
+        - key: 'HKEY_LOCAL_MACHINE\SOFTWARE\WOW6432Node\Microsoft\Windows NT\CurrentVersion\Winlogon'
+          value: 'Shell'
+  - type: 'REGISTRY_KEY'
+    supported_os: 'Windows'
+    attributes:
+      keys:
+        - 'HKEY_USERS\%%users_sid%%\Software\Microsoft\Windows\CurrentVersion\Explorer\User Shell Folders'
+        - 'HKEY_USERS\%%users_sid%%\Software\Microsoft\Windows\CurrentVersion\Explorer\Shell Folders'
+        - 'HKEY_USERS\%%users_sid%%\Software\Microsoft\Windows\CurrentVersion\Explorer\User Shell Folders'
+        - 'HKEY_USERS\%%users_sid%%\Software\Microsoft\Windows\CurrentVersion\Explorer\Shell Folders'
+  - type: 'REGISTRY_KEY'
+    supported_os: 'Windows'
+    attributes:
+      keys:
+        - 'HKEY_LOCAL_MACHINE\Software\Microsoft\Windows\CurrentVersion\RunServicesOnce'
+        - 'HKEY_USERS\%%users_sid%%\Software\Microsoft\Windows\CurrentVersion\RunServicesOnce'
+        - 'HKEY_LOCAL_MACHINE\Software\Microsoft\Windows\CurrentVersion\RunServices'
+        - 'HKEY_USERS\%%users_sid%%\Software\Microsoft\Windows\CurrentVersion\RunServices'
+  - type: 'REGISTRY_VALUE'
+    supported_os: 'Windows'
+    attributes:
+      key_value_pairs:
+        - key: 'HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Lsa'
+          value: 'Authentication Packages'
+        - key: 'HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Lsa'
+          value: 'Security Packages'
+  - type: 'REGISTRY_KEY'
+    supported_os: 'Windows'
+    attributes:
+      keys:
+        - 'HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Lsa\OSConfig'
+  - type: 'REGISTRY_KEY'
+    supported_os: 'Windows'
+    attributes:
+      keys:
+        - 'HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\W32Time\TimeProviders'
+  - type: 'REGISTRY_KEY'
+    supported_os: 'Windows'
+    attributes:
+      keys:
+        - 'HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Print\Monitors'
+        - 'HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Print\Environments\*\Drivers\*\*\'
+  - type: 'REGISTRY_VALUE'
+    supported_os: 'Windows'
+    attributes:
+      key_value_pairs:
+        - key: 'HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Print\Monitors\*'
+          value: 'Driver'
+  - type: 'REGISTRY_VALUE'
+    supported_os: 'Windows'
+    attributes:
+      key_value_pairs:
+        - key: 'HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Active Setup\Installed Components\*'
+          value: 'StubPath'
+  - type: 'REGISTRY_VALUE'
+    supported_os: 'Windows'
+    attributes:
+      key_value_pairs:
+        - key: 'HKEY_CURRENT_USER\Environment'
+          value: 'UserInitMprLogonScript'
+  - type: 'REGISTRY_VALUE'
+    supported_os: 'Windows'
+    attributes:
+      key_value_pairs:
+        - key: 'HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Session Manager\'
+          value: 'BootExecute'
+        - key: 'HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Session Manager'
+          value: 'PendingFileRenameOperations'
+  - type: 'REGISTRY_KEY'
+    supported_os: 'Windows'
+    attributes:
+      keys:
+        - 'HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Group Policy\Scripts\Startup'
+        - 'HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\StartupApproved\Run'
+version: '0.0.1'
+doc: 'Windows 平台上自启动相关信息收集。'
+
+---
+
+name: 'WindowsPolicyScripts'
+author: 'NOPTeam'
+sources:
+  - type: 'PATH'
+    supported_os: 'Windows'
+    attributes:
+      paths:
+        - 'C:\Windows\System32\GroupPolicy\Machine\Scripts\Startup'
+        - 'C:\Windows\System32\GroupPolicy\Machine\Scripts\Shutdown'
+        - 'C:\Windows\System32\GroupPolicy\User\Scripts\Logon'
+        - 'C:\Windows\System32\GroupPolicy\User\Scripts\Logoff\'
+  - type: 'REGISTRY_KEY'
+    supported_os: 'Windows'
+    attributes:
+      keys:
+        - 'HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Group Policy\Scripts'
+        - 'HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Group Policy\Scripts\*\'
+        - 'HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Group Policy\Scripts\*\*\'
+  - type: 'REGISTRY_KEY'
+    supported_os: 'Windows'
+    attributes:
+      keys:
+        - 'HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Group Policy\Scripts'
+        - 'HKEY_USERS\%%users_sid%%\Software\Microsoft\Windows\CurrentVersion\Group Policy\Scripts\Logoff'
+        - 'HKEY_USERS\%%users_sid%%\Software\Microsoft\Windows\CurrentVersion\Group Policy\Scripts\Logoff\*\'
+        - 'HKEY_USERS\%%users_sid%%\Software\Microsoft\Windows\CurrentVersion\Group Policy\Scripts\Logoff\*\*\'
+        - 'HKEY_USERS\%%users_sid%%\Software\Microsoft\Windows\CurrentVersion\Group Policy\Scripts\Logon'
+        - 'HKEY_USERS\%%users_sid%%\Software\Microsoft\Windows\CurrentVersion\Group Policy\Scripts\Logon\*\'
+        - 'HKEY_USERS\%%users_sid%%\Software\Microsoft\Windows\CurrentVersion\Group Policy\Scripts\Logon\*\*\'
+version: '0.0.1'
+doc: 'Windows 平台上组策略相关脚本。'
+
+```
+
+采集 Windows 平台上自启动相关内容
+
+
+
+### BitsJob.yaml
+
+```yaml
+name: WindowsBitsJob
+doc: >-
+  BITS Job（Background Intelligent Transfer Service 任务）是微软 Windows
+  系统中的一个后台智能传输服务任务单位。
+author: NOPTeam
+version: 0.0.1
+sources:
+  - type: COMMAND
+    supported_os: Windows
+    attributes:
+      cmd: bitsadmin
+      args:
+        - /list
+        - /allusers
+        - /verbose
+  - type: COMMAND
+    supported_os: Windows
+    attributes:
+      cmd: powershell
+      args:
+        - '-c'
+        - '"Get-BitsTransfer -AllUsers"'
+```
+
+采集 Windows 平台上的 BITS Job 相关信息
+
+
+
+### COM.yaml
+
+```yaml
+name: 'WindowsCOMHijacking'
+author: 'NOPTeam'
+sources:
+  - type: 'REGISTRY_KEY'
+    supported_os: 'Windows'
+    attributes:
+      keys:
+        - 'HKEY_CLASSES_ROOT\CLSID\*\InprocServer32'
+        - 'HKEY_LOCAL_MACHINE\SOFTWARE\Classes\CLSID\*\InprocServer32'
+        - 'HKEY_USERS\%%users_sid%%\Software\Classes\CLSID\*\InprocServer32'
+version: '0.0.1'
+doc: "COM（Component Object Model）是微软提出的一种软件组件对象模型，用于 Windows 各种程序和系统组件之间的通信和功能复用。\n程序通过CLSID/ProgID 等方式调用系统或第三方注册的 COM 组件。\n\nWindows 程序调用 COM 组件时，会从注册表查找对应 CLSID/ProgID 的实现 DLL 路径并加载。\n攻击者通过修改注册表，把某个常用或系统自动调用的 COM 组件的路径指向自己的恶意 DLL。\n这样，当系统或软件调用该 COM 组件时，就会自动加载攻击者的恶意代码，实现代码注入、权限维持、持久化等。"
+urls:
+  - 'https://paper.seebug.org/2030/'
+```
+
+采集 Windows 平台上 COM劫持相关的注册表内容 。
+
+
+
+### Defender.yaml
+
+```yaml
+name: WindowsDefender
+doc: Windows Defender 检测到的信息收集。
+author: NOPTeam
+version: 0.0.1
+sources:
+  - type: FILE
+    supported_os: Windows
+    attributes:
+      paths:
+        - >-
+          %%environ_systemroot%%\System32\Winevt\Logs\Microsoft-Windows-Windows
+          Defender*.evtx
+  - type: COMMAND
+    supported_os: Windows
+    attributes:
+      cmd: powershell
+      args:
+        - '-c'
+        - '"Get-MpThreatDetection | Format-List"'
+  - type: COMMAND
+    supported_os: Windows
+    attributes:
+      cmd: powershell
+      args:
+        - '-c'
+        - '"Get-MpThreat"'
+  - type: COMMAND
+    supported_os: Windows
+    attributes:
+      cmd: powershell
+      args:
+        - '-c'
+        - '"Get-MpPreference | Format-List"'
+  - type: PATH
+    supported_os: Windows
+    attributes:
+      paths:
+        - '%%environ_programdata%%\Microsoft\Windows Defender\Quarantine\'
+  - type: REGISTRY_KEY
+    supported_os: Windows
+    attributes:
+      keys:
+        - HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows Defender
+        - HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows Defender
+        - HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\WinDefend
+
+```
+
+采集 Windows 平台上自带的 Defender 相关内容，例如检测到恶意行为、隔离区等。
+
+
+
+### DLL.yaml
+
+```yaml
+name: 'WindowsDLLCheck'
+author: 'NOPTeam'
+sources:
+  - type: 'REGISTRY_VALUE'
+    supported_os: 'Windows'
+    attributes:
+      key_value_pairs:
+        - key: 'HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Session Manager'
+          value: 'SafeDllSearchMode'
+  - type: 'REGISTRY_VALUE'
+    supported_os: 'Windows'
+    attributes:
+      key_value_pairs:
+        - key: 'HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Windows'
+          value: 'AppInit_DLLs'
+  - type: 'REGISTRY_KEY'
+    supported_os: 'Windows'
+    attributes:
+      keys:
+        - 'HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Session Manager\KnownDLLs'
+version: '0.0.1'
+doc: 'Windows DLL 劫持、注入等相关信息收集。'
+```
+
+采集 Windows 平台上 DLL 劫持、注入相关信息
+
+
+
+### Env.yaml
+
+```yaml
+name: WindowsEnv
+doc: Windows 中环境变量信息。
+author: NOPTeam
+version: 0.0.1
+sources:
+  - type: COMMAND
+    supported_os: Windows
+    attributes:
+      cmd: set
+      args: []
+  - type: COMMAND
+    supported_os: Windows
+    attributes:
+      cmd: powershell
+      args:
+        - '-c'
+        - '"ls env: | Format-Table -Wrap"'
+
+```
+
+采集 Windows 平台上环境变量信息
+
+
+
+### Firewall.yaml
+
+```yaml
+name: WindowsFirewall
+doc: Windows 平台上防火墙的状态以及规则。
+author: NOPTeam
+version: 0.0.1
+sources:
+  - type: COMMAND
+    supported_os: Windows
+    attributes:
+      cmd: powershell
+      args:
+        - '-c'
+        - '"Get-NetFirewallProfile"'
+  - type: COMMAND
+    supported_os: Windows
+    attributes:
+      cmd: netsh
+      args:
+        - advfirewall
+        - show
+        - allprofiles
+  - type: COMMAND
+    supported_os: Windows
+    attributes:
+      cmd: powershell
+      args:
+        - '-c'
+        - '"Get-NetFirewallRule | Where-Object { $_.Enabled -eq ''True'' }"'
+  - type: COMMAND
+    supported_os: Windows
+    attributes:
+      cmd: netsh
+      args:
+        - advfirewall
+        - firewall
+        - show
+        - rule
+        - name=all
+
+```
+
+采集 Windows 平台上关于防火墙状态以及规则相关信息
+
+
+
+### History.yaml
+
+```yaml
+name: WindowsCmdHistory
+doc: |-
+  Windows 平台上 cmd 历史信息。
+  cmd命令历史只能在未关闭的 cmd命令窗中进⾏查询，如果 cmd 窗⼝关闭，或未通过 cmd 命令窗进⾏的命令操作，是不会记录的。
+author: NOPTeam
+version: 0.0.1
+sources:
+  - type: COMMAND
+    supported_os: Windows
+    attributes:
+      cmd: doskey
+      args:
+        - /history
+
+---
+
+name: WindowsPSHistory
+doc: Windows 平台上 Powershell 的历史记录。
+author: NOPTeam
+version: 0.0.1
+sources:
+  - type: COMMAND
+    supported_os: Windows
+    attributes:
+      cmd: powershell
+      args:
+        - '-c'
+        - '"Get-History"'
+  - type: FILE
+    supported_os: Windows
+    attributes:
+      paths:
+        - >-
+          %%users_userprofile%%\AppData\Roaming\Microsoft\PowerShell\PSReadLine\ConsoleHost_history.txt
+        - >-
+          %%users_userprofile%%\\AppData\Roaming\Microsoft\Windows\PowerShell\PSReadLine\ConsoleHost_history.txt
+
+```
+
+采集 Windows 平台上的 cmd、 powershell 的历史记录，主要是 powershell 的历史记录
+
+
+
+### IFEOInject.yaml
+
+```yaml
+name: WindowsIFEOInjection
+doc: >-
+  Image File Execution Options (IFEO) 是一个 Windows 调试功能，而不是一个后门。IFEO
+  的主要目的是允许开发人员调试和跟踪特定的可执行文件。
+
+
+  IFEO 提供了一种机制，使开发人员能够将一个调试器程序关联到特定的可执行文件，并在执行该可执行文件时启动调试器。这对于开发、调试和分析应用程序非常有用。
+
+  当给定的可执行文件被启动时，操作系统会检查注册表中的 IFEO
+  设置。如果找到了对应的注册表项，系统会自动启动所配置的调试器程序，并将目标可执行文件作为参数传递给调试器。这样，开发人员就可以使用调试器来监视和分析目标应用程序的运行过程，以便调试和解决问题。
+author: NOPTeam
+version: 0.0.1
+sources:
+  - type: REGISTRY_VALUE
+    supported_os: Windows
+    attributes:
+      key_value_pairs:
+        - key: >-
+            HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows
+            NT\CurrentVersion\Image File Execution Options\*
+          value: debugger
+```
+
+采集 Windows 平台 IFEO 相关信息
+
+
+
+### IPC.yaml
+
+```yaml
+name: 'WindowsIPCShare'
+author: 'NOPTeam'
+sources:
+  - type: 'COMMAND'
+    supported_os: 'Windows'
+    attributes:
+      cmd: 'net'
+      args:
+        - 'share'
+version: '0.0.1'
+doc: 'Windows 平台上 IPC 共享信息收集。'
+```
+
+采集 Windows 平台上的 IPC 共享信息
+
+
+
+### Log.yaml
+
+```yaml
+name: 'WindowsLogs'
+author: 'NOPTeam'
+sources:
+  - type: 'PATH'
+    supported_os: 'Windows'
+    attributes:
+      paths:
+        - 'C:\Windows\System32\winevt\Logs\'
+version: '0.0.1'
+doc: 'Windows 平台上日志信息。'
+```
+
+采集 Windows 平台上日志文件
+
+
+
+### Login.yaml
+
+```yaml
+name: 'WindowsLogin'
+author: 'NOPTeam'
+sources:
+  - type: 'COMMAND'
+    supported_os: 'Windows'
+    attributes:
+      cmd: 'query'
+      args:
+        - 'user'
+  - type: 'COMMAND'
+    supported_os: 'Windows'
+    attributes:
+      cmd: 'query'
+      args:
+        - 'session'
+  - type: 'COMMAND'
+    supported_os: 'Windows'
+    attributes:
+      cmd: 'powershell'
+      args:
+        - '-c'
+        - '"Get-SmbSession"'
+version: '0.0.1'
+doc: 'Windows 平台上与登录信息相关内容收集。'
+
+```
+
+采集 Windows 平台上登录相关信息
+
+
+
+### NetSh.yaml
+
+```yaml
+name: 'WindowsNetSh'
+author: 'NOPTeam'
+sources:
+  - type: 'REGISTRY_KEY'
+    supported_os: 'Windows'
+    attributes:
+      keys:
+        - 'HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\NetSh'
+version: '0.0.1'
+doc: "NetSh（Network Shell） 是 Windows 自带的一个强大的命令行网络配置工具。\n攻击者可能注册帮助程序来进行权限维持。"
+urls:
+  - 'https://pentestlab.blog/2019/10/29/persistence-netsh-helper-dll/'
+```
+
+采集 Windows 平台上 NetSh 帮助程序信息
+
+
+
+### Network.yaml
+
+```yaml
+name: WindowsNetwork
+doc: Windows 上网络连接信息。
+author: NOPTeam
+version: 0.0.1
+sources:
+  - type: COMMAND
+    supported_os: Windows
+    attributes:
+      cmd: netstat
+      args:
+        - '-a'
+        - '-n'
+        - '-o'
+        - '-b'
+  - type: COMMAND
+    supported_os: Windows
+    attributes:
+      cmd: nbtstat
+      args:
+        - '-c'
+  - type: COMMAND
+    supported_os: Windows
+    attributes:
+      cmd: powershell
+      args:
+        - '-c'
+        - '"Get-NetTCPConnection"'
+  - type: COMMAND
+    supported_os: Windows
+    attributes:
+      cmd: powershell
+      args:
+        - '-c'
+        - '"Get-NetUDPEndpoint"'
+```
+
+发现 Windows 平台上的网络连接信息
+
+
+
+### NetworkProvider.yaml
+
+```yaml
+name: 'WindowsNetworkProvider'
+author: 'NOPTeam'
+sources:
+  - type: 'REGISTRY_VALUE'
+    supported_os: 'Windows'
+    attributes:
+      key_value_pairs:
+        - key: 'HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\NetworkProvider\Order'
+          value: 'ProviderOrder'
+        - key: 'HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\NetworkProvider\HwOrder'
+          value: 'ProviderOrder'
+  - type: 'REGISTRY_KEY'
+    supported_os: 'Windows'
+    attributes:
+      keys:
+        - 'HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\NetworkProvider\ProviderOrder'
+        - 'HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\NetworkProvider'
+version: '0.0.1'
+doc: "Network Provider（网络提供者）是 Windows 网络子系统的一个扩展机制，用于实现对网络资源（如共享文件夹、打印机、云盘等）的访问和认证。\n可以在 HKEY_LOCAL_MACHINE\\SYSTEM\\CurrentControlSet\\Services\\ 寻找相关服务。"
+```
+
+采集 Windows 上 `Network Provider` 相关信息
+
+
+
+### PasswordFilter.yaml
+
+```yaml
+name: 'WindowsPasswordFilter'
+author: 'NOPTeam'
+sources:
+  - type: 'REGISTRY_VALUE'
+    supported_os: 'Windows'
+    attributes:
+      key_value_pairs:
+        - key: 'HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Lsa'
+          value: 'Notification Packages'
+version: '0.0.1'
+doc: "Password Filter（密码筛选器） 是 Windows 系统支持的一种可插拔认证扩展机制。\n它允许管理员自定义 DLL，在用户修改/设置密码时对新密码进行审核和处理。"
+```
+
+采集 Windows 上 `Password Filter` 相关信息
+
+
+
+### Powershell.yaml
+
+```yaml
+name: WindowsPSConfig
+doc: Windows 平台上 Powershell 的配置文件信息收集。
+author: NOPTeam
+version: 0.0.1
+sources:
+  - type: COMMAND
+    supported_os: Windows
+    attributes:
+      cmd: powershell
+      args:
+        - '-c'
+        - '"$PROFILE | Select-Object *"'
+urls:
+  - >-
+    https://learn.microsoft.com/zh-cn/Powershell/module/microsoft.Powershell.core/about/about_profiles?view=Powershell-7.4
+
+---
+
+name: WindowsPSAlias
+doc: Windows 平台上 Powershell 的 Alias 信息。
+author: NOPTeam
+version: 0.0.1
+sources:
+  - type: COMMAND
+    supported_os: Windows
+    attributes:
+      cmd: powershell
+      args:
+        - '-c'
+        - '"alias"'
+
+---
+
+name: PowershellLog
+author: NOPTeam
+sources:
+  - type: FILE
+    supported_os: Windows
+    attributes:
+      paths:
+        - >-
+          %%environ_systemroot%%\System32\Winevt\Logs\Microsoft-Windows-PowerShell%4Admin.evtx
+        - >-
+          %%environ_systemroot%%\System32\Winevt\Logs\Microsoft-Windows-PowerShell%4Operational.evtx
+        - >-
+          %%environ_systemroot%%\System32\Winevt\Logs\Microsoft-Windows-PowerShell-DesiredStateConfiguration-FileDownloadManager%4Operational.evtx
+version: 0.0.1
+doc: Powershell 相关日志收集。
+
+```
+
+采集 Windows 平台上 Powershell 的配置信息
+
+
+
+### Process.yaml
+
+```yaml
+name: 'WindowsProcess'
+author: 'NOPTeam'
+sources:
+  - type: 'COMMAND'
+    supported_os: 'Windows'
+    attributes:
+      cmd: 'tasklist'
+      args:
+        - '/v'
+  - type: 'COMMAND'
+    supported_os: 'Windows'
+    attributes:
+      cmd: 'tasklist'
+      args:
+        - '/m'
+  - type: 'COMMAND'
+    supported_os: 'Windows'
+    attributes:
+      cmd: 'tasklist'
+      args:
+        - '/svc'
+  - type: 'COMMAND'
+    supported_os: 'Windows'
+    attributes:
+      cmd: 'powershell'
+      args:
+        - '-c'
+        - '"gps"'
+  - type: 'WMI'
+    supported_os: 'Windows'
+    attributes:
+      base_object: ''
+      query: 'SELECT * FROM Win32_Process'
+version: '0.0.1'
+doc: 'Windows 平台上进程信息。'
+```
+
+采集 Windows 平台上进程相关信息
+
+
+
+### RDP.yaml
+
+```yaml
+name: 'WindowsRDP'
+author: 'NOPTeam'
+sources:
+  - type: 'REGISTRY_KEY'
+    supported_os: 'Windows'
+    attributes:
+      keys:
+        - 'HKEY_USERS\%%users_sid%%\Software\Microsoft\Terminal Server Client\Default'
+        - 'HKEY_USERS\%%users_sid%%\Software\Microsoft\Terminal Server Client\Servers'
+  - type: 'FILE'
+    supported_os: 'Windows'
+    attributes:
+      paths:
+        - '%%users_userprofile%%\Documents\Default.rdp'
+version: '0.0.1'
+doc: 'Windows 平台上 RDP 相关信息收集。'
+```
+
+采集 Windows 平台上 RDP 相关信息
+
+
+
+### Screen.yaml
+
+```yaml
+name: 'WindowsScreen'
+author: 'NOPTeam'
+sources:
+  - type: 'REGISTRY_KEY'
+    supported_os: 'Windows'
+    attributes:
+      keys:
+        - 'HKEY_USERS\%%users_sid%%\Control Panel\Desktop'
+version: '0.0.1'
+doc: 'Windows 平台上屏幕保护排查。'
+```
+
+采集 Windows 平台上屏幕保护相关信息
+
+
+
+### SensitiveDir.yaml
+
+```yaml
+name: 'WindowsSensitiveDir'
+author: 'NOPTeam'
+sources:
+  - type: 'PATH'
+    supported_os: 'Windows'
+    attributes:
+      paths:
+        - '%%users_temp%%'
+        - 'C:\Windows\Temp'
+  - type: 'PATH'
+    supported_os: 'Windows'
+    attributes:
+      paths:
+        - 'C:\$Recycle.Bin'
+  - type: 'PATH'
+    supported_os: 'Windows'
+    attributes:
+      paths:
+        - '%%environ_systemdrive%%\Users\Public'
+version: '0.0.1'
+doc: 'Windows 平台上敏感目录收集。'
+```
+
+采集 Windows 平台上敏感目录排查，例如各个用户的 temp 目录
+**需要注意：** 这些目录可能内容很多，需要根据实际情况选择是否收集
+
+
+
+### Service.yaml
+
+```yaml
+name: WindowsServices
+doc: Windows 平台上服务信息。
+author: NOPTeam
+version: 0.0.1
+sources:
+  - type: COMMAND
+    supported_os: Windows
+    attributes:
+      cmd: sc
+      args:
+        - queryex
+  - type: COMMAND
+    supported_os: Windows
+    attributes:
+      cmd: powershell
+      args:
+        - '-c'
+        - '"Get-Service | Select *"'
+  - type: WMI
+    supported_os: Windows
+    attributes:
+      base_object: ''
+      query: SELECT * FROM Win32_Service
+  - type: REGISTRY_KEY
+    supported_os: Windows
+    attributes:
+      keys:
+        - >-
+          HKEY_LOCAL_MACHINE\Software\Microsoft\Windows\CurrentVersion\RunServicesOnce
+        - >-
+          HKEY_LOCAL_MACHINE\Software\Microsoft\Windows\CurrentVersion\RunServices
+        - >-
+          HKEY_USERS\%%users_sid%%\Software\Microsoft\Windows\CurrentVersion\RunServicesOnce
+        - >-
+          HKEY_USERS\%%users_sid%%\Software\Microsoft\Windows\CurrentVersion\RunServices
+
+```
+
+采集 Windows 平台上服务相关信息
+
+
+
+### Systeminfo.yaml
+
+```yaml
+name: WindowsSysteminfo
+doc: Windows 平台上系统基本信息以及补丁信息。
+author: NOPTeam
+version: 0.0.1
+sources:
+  - type: COMMAND
+    supported_os: Windows
+    attributes:
+      cmd: systeminfo
+      args: []
+  - type: COMMAND
+    supported_os: Windows
+    attributes:
+      cmd: wmic
+      args:
+        - qfe
+        - list
+```
+
+采集 Windows 平台上系统基本信息以及补丁信息
+
+
+
+### TaskScheduler.yaml
+
+```yaml
+name: 'WindowsTaskScheduler'
+doc: 'Windows 计划任务（Task Scheduler）信息收集。'
+author: 'NOPTeam'
+version: '0.0.1'
+sources:
+  - type: 'COMMAND'
+    supported_os: 'Windows'
+    attributes:
+      cmd: 'schtasks'
+      args:
+        - '/query'
+        - '/fo'
+        - 'LIST'
+        - '/v'
+  - type: 'PATH'
+    supported_os: 'Windows'
+    attributes:
+      paths:
+        - 'C:\Windows\System32\Tasks'
+  - type: 'REGISTRY_KEY'
+    supported_os: 'Windows'
+    attributes:
+      keys:
+        - 'HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Schedule\TaskCache\Tasks\*'
+  - type: 'FILE'
+    supported_os: 'Windows'
+    attributes:
+      paths:
+        - 'C:\Windows\Tasks\SchedLgU.txt'
+        - 'C:\Windows\System32\winevt\Logs\Microsoft-Windows-TaskScheduler*.evtx'
+```
+
+采集 Windows 平台上的计划任务信息。
+
+
+
+### WinsockNSP.yaml
+
+```yaml
+name: 'WindowsWinsockNSP'
+author: 'NOPTeam'
+sources:
+  - type: 'REGISTRY_KEY'
+    supported_os: 'Windows'
+    attributes:
+      keys:
+        - 'HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\WinSock2\Parameters\NameSpace_Catalog5\Catalog_Entries\*'
+        - 'HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\WinSock2\Parameters\NameSpace_Catalog5\Catalog_Entries64\*'
+        - 'HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\WinSock2\Parameters\Protocol_Catalog9\Catalog_Entries64\*'
+        - 'HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\WinSock2\Parameters\Protocol_Catalog9\Catalog_Entries\*'
+version: '0.0.1'
+doc: "WinSock NSP（WinSock Namespace Provider）是指在 Windows 操作系统中实现⽹络套接字编程接⼝（Socket API）的组件之⼀。它负责提供⽹络通信的底层功能，使应⽤程序能\n够通过⽹络进⾏数据传输。\nWinSock NSP 通过⼀组动态链接库（DLL）来实现，这些 DLL 包含了实现⽹络协议栈和通信协议的代码。它们提供了⼀种标准化的编程接⼝，使开发⼈员能够使⽤常⻅的⽹络协议（如TCP/IP、UDP）进⾏⽹络通信。\n通过 WinSock NSP，开发⼈员可以创建套接字、建⽴连接、发送和接收数据等⽹络操作。\n它提供了⼀系列函数和数据结构，使应⽤程序能够⽅便地进⾏⽹络编程，实现⽹络通信功能"
+
+```
+
+采集 Windows 平台上 WinSock Namespace Provider 信息
+
+
+
+### WMI.yaml
+
+```yaml
+name: 'WindowsWmi'
+author: 'NOPTeam'
+sources:
+  - type: 'COMMAND'
+    supported_os: 'Windows'
+    attributes:
+      cmd: 'wmic'
+      args:
+        - '/namespace:"\\root\subscription"'
+        - 'path'
+        - '__EventFilter'
+        - 'get'
+        - '*'
+  - type: 'COMMAND'
+    supported_os: 'Windows'
+    attributes:
+      cmd: 'wmic'
+      args:
+        - '/namespace:"\\root\DEFAULT"'
+        - 'path'
+        - '__EventFilter'
+        - 'get'
+        - '*'
+  - type: 'COMMAND'
+    supported_os: 'Windows'
+    attributes:
+      cmd: 'wmic'
+      args:
+        - '/namespace:"\\root\subscription"'
+        - 'path'
+        - '__EventConsumer'
+        - 'get'
+        - '*'
+  - type: 'COMMAND'
+    supported_os: 'Windows'
+    attributes:
+      cmd: 'wmic'
+      args:
+        - '/namespace:"\\root\DEFAULT"'
+        - 'path'
+        - '__EventConsumer'
+        - 'get'
+        - '*'
+  - type: 'COMMAND'
+    supported_os: 'Windows'
+    attributes:
+      cmd: 'wmic'
+      args:
+        - '/namespace:"\\root\subscription"'
+        - 'path'
+        - '__FilterToConsumerBinding'
+        - 'get'
+        - '*'
+  - type: 'COMMAND'
+    supported_os: 'Windows'
+    attributes:
+      cmd: 'wmic'
+      args:
+        - '/namespace:"\\root\DEFAULT"'
+        - 'path'
+        - '__FilterToConsumerBinding'
+        - 'get'
+        - '*'
+  - type: 'WMI'
+    supported_os: 'Windows'
+    attributes:
+      base_object: 'root\subscription'
+      query: 'SELECT * FROM __EventFilter'
+  - type: 'WMI'
+    supported_os: 'Windows'
+    attributes:
+      base_object: 'root\DEFAULT'
+      query: 'SELECT * FROM __EventFilter'
+  - type: 'WMI'
+    supported_os: 'Windows'
+    attributes:
+      base_object: 'root\subscription'
+      query: 'SELECT * FROM __EventConsumer'
+  - type: 'WMI'
+    supported_os: 'Windows'
+    attributes:
+      base_object: 'root\DEFAULT'
+      query: 'SELECT * FROM __EventConsumer'
+  - type: 'WMI'
+    supported_os: 'Windows'
+    attributes:
+      base_object: 'root\DEFAULT'
+      query: 'SELECT * FROM __EventConsumer'
+  - type: 'WMI'
+    supported_os: 'Windows'
+    attributes:
+      base_object: 'root\subscription'
+      query: 'SELECT * FROM __FilterToConsumerBinding'
+version: '0.0.1'
+doc: 'Windows 平台上 WMI 后门信息收集。'
+
+```
+
+采集 Windows 平台上 WMI 相关信息，用于判断是否存在 WMI 后门
 
 ----
 
-目前 Linux 版本配置如上，如果大家有好的建议，可以提 pr 或者微信联系 `just_hack_for_fun` 反馈。
+目前 Linux 版本和 Windows 版本配置如上，如果大家有好的建议，可以提 PR 或者微信联系 `just_hack_for_fun` 反馈。
 
 
 
