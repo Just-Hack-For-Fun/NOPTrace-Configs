@@ -1,0 +1,28 @@
+name: WindowsSandbox
+author: NOPTeam
+sources:
+  - type: COMMAND
+    supported_os: Windows
+    attributes:
+      cmd: powershell
+      args:
+        - '-c'
+        - >-
+          Get-WindowsOptionalFeature -Online -FeatureName
+          "Containers-DisposableClientVM"
+  - type: COMMAND
+    supported_os: Windows
+    attributes:
+      cmd: DISM
+      args:
+        - /Online
+        - /Get-FeatureInfo
+        - /FeatureName:Containers-DisposableClientVM
+version: 0.0.1
+doc: |-
+  Windows 平台上 Sandbox 的状态采集，攻击者可能会使用该功能躲避杀软。
+  该收集项需要管理员权限。
+urls:
+  - >-
+    https://www.welivesecurity.com/en/eset-research/operation-akairyu-mirrorface-invites-europe-expo-2025-revives-anel-backdoor/
+  - https://blog-en.itochuci.co.jp/entry/2025/03/12/140000
